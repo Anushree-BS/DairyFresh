@@ -1,143 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DairyFresh • Products</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#fbfbfb; --card:#fff; --muted:#7b7b85; --accent:#0b1320; --glass:rgba(11,19,32,0.05); --radius:12px;
-    }
-    *{box-sizing:border-box;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;}
-    body{margin:0;background:linear-gradient(180deg,var(--bg),#f6f7f8);color:var(--accent);min-height:100vh;}
-    header{display:flex;align-items:center;justify-content:space-between;padding:20px 40px;}
-    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--accent)}
-    .logo{width:48px;height:48px}
-    h1{margin:18px 40px 0 40px;font-size:26px}
-    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:24px 40px}
-    .card{background:var(--card);border-radius:12px;padding:14px;box-shadow:0 10px 30px var(--glass);display:flex;flex-direction:column;justify-content:space-between}
-    .imgwrap{height:150px;border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fafafa}
-    .imgwrap img{width:100%;height:100%;object-fit:cover}
-    .title{font-weight:700;margin:12px 0 8px 0}
-    .price{color:var(--muted);font-weight:600;margin-bottom:10px}
-    .actions{display:flex;gap:10px;align-items:center}
-    .btn{padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:700}
-    .add{background:#0b7a66;color:white}
-    .viewcart{background:transparent;border:1px solid rgba(11,19,32,0.06)}
-    .top-actions{display:flex;justify-content:space-between;align-items:center;padding:0 40px}
-    .search{padding:10px 14px;border-radius:10px;border:1px solid rgba(11,19,32,0.06);width:360px}
-    /* small helper */
-    .muted{color:var(--muted);font-size:14px}
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>DairyFresh • Products</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f7fb; --card:#fff; --muted:#6b7280; --accent:#0b1320; --accent-2:#0b7a66; --glass:rgba(11,19,32,0.04); --radius:12px;
+  }
+  *{box-sizing:border-box;font-family:Inter,system-ui,Arial;}
+  body{margin:0;background:var(--bg);color:var(--accent);min-height:100vh;}
+  header{display:flex;align-items:center;justify-content:space-between;padding:18px 48px;}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--accent)}
+  nav a{color:var(--accent);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:10px}
+  .wrap{padding:20px 48px}
+  h1{margin:6px 0 18px 0}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 14px 40px var(--glass);display:flex;flex-direction:column;align-items:center;gap:10px}
+  .card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+  .title{font-weight:700;text-align:center}
+  .price{color:var(--muted)}
+  .actions{display:flex;gap:8px;margin-top:8px}
+  .btn{padding:10px 12px;border-radius:10px;border:none;cursor:pointer;font-weight:700}
+  .add{background:var(--accent-2);color:white}
+  .view{background:transparent;border:1px solid rgba(11,19,32,0.06)}
+  .searchWrap{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+  .search{padding:10px 12px;border-radius:10px;border:1px solid rgba(11,19,32,0.06);width:420px}
+  footer{padding:20px 48px;color:var(--muted)}
+  @media (max-width:1000px){ .grid{grid-template-columns:repeat(2,1fr)} .search{width:220px} }
+  @media (max-width:640px){ header{padding:12px} .wrap{padding:12px} .grid{grid-template-columns:1fr} }
+</style>
 </head>
 <body>
-  <header>
-    <a class="brand" href="index.html" aria-label="DairyFresh home">
-      <!-- small inline svg as logo -->
-      <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-        <g fill="none" stroke="#0b1320" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M10 26c0-6 5-11 11-11 3 0 6 .8 8.5 2.5C33.2 17 36 18 39 18c6 0 11 5 11 11 0 2.8-1 6-3 8-3 3-8 4-14 4H20c-6 0-10-4-10-9 0-3 0-6 3-7z"/>
-        </g>
-      </svg>
-      <div>
-        <div style="font-weight:700">DairyFresh</div>
-        <div style="font-size:12px;color:#7b7b85;margin-top:2px">Premium dairy products</div>
-      </div>
-    </a>
+<header>
+  <a class="brand" href="index.html" style="text-decoration:none;color:inherit">
+    <svg width="44" height="44" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#0b1320" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 30c0-6 6-12 13-12 3 0 6 .9 8.5 2.6C36 22 39 23 42 23c6 0 12 6 12 12 0 3-1 6-3 8-3 3-9 5-16 5H24c-6 0-12-5-12-10 0-3 0-6 3-8z"/></g></svg>
+  </a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="cart.html">Cart</a>
+  </nav>
+</header>
 
-    <a href="cart.html" class="btn viewcart" style="padding:10px 12px;text-decoration:none">View Cart</a>
-  </header>
-
-  <div class="top-actions">
+<main class="wrap">
+  <div class="searchWrap">
     <h1>All Products</h1>
     <input id="search" class="search" placeholder="Search products (milk, paneer, cheese...)" />
   </div>
 
-  <section class="grid" id="productGrid">
-    <!-- product cards injected by JS -->
-  </section>
+  <section class="grid" id="productGrid"></section>
 
-  <div style="padding:24px 40px">
-    <a href="cart.html" class="btn add" style="text-decoration:none">Go to Cart</a>
+  <div style="margin-top:18px;display:flex;justify-content:flex-end">
+    <a href="cart.html" class="btn view" style="text-decoration:none;padding:10px 14px">Go to Cart</a>
   </div>
+</main>
+
+<footer>© <span id="year2"></span> DairyFresh</footer>
 
 <script>
-/* Product data (real images from Unsplash). Each item: id,title,price,img */
+/* Product data — real product-specific images from Unsplash */
 const PRODUCTS = [
-  {id:'milk', title:'Fresh Milk (1L)', price:60, img:'https://images.unsplash.com/photo-1524594154905-4e9b2c3c5d8a?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5d9a6f5e4e549bff1a4be8b5c4d4aeb1'},
+  {id:'milk', title:'Fresh Milk (1L)', price:60, img:'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=0b05b6d8c8a2b1a2a3f4a3e7c5f6b2b2'},
   {id:'curd', title:'Creamy Curd (500g)', price:55, img:'https://images.unsplash.com/photo-1617191514159-2b1e85ea0b0f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=4d2160e9dbd9a3e6d7f6fbc9f3c4c3b1'},
-  {id:'cheese', title:'Aged Cheese (200g)', price:220, img:'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=0b05b6d8c8a2b1a2a3f4a3e7c5f6b2b2'},
-  {id:'butter', title:'Creamy Butter (200g)', price:120, img:'https://images.unsplash.com/photo-1604908177224-5a9e6a6f6a6b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=0b9b6f6c6c9a5a5a5a5a5a5a5a5a5a5'},
+  {id:'cheese', title:'Aged Cheese (200g)', price:220, img:'https://images.unsplash.com/photo-1605475120913-2d6cae8c4f6a?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5f7b9d2c3ab4c5d6e7f8a9b0c1d2e3f4'},
+  {id:'butter', title:'Creamy Butter (200g)', price:120, img:'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=0b05b6d8c8a2b1a2a3f4a3e7c5f6b2b2'},
   {id:'ghee', title:'Pure Ghee (250g)', price:260, img:'https://images.unsplash.com/photo-1626406590129-df6d85c6fb1b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1a2b3c4d5e6f708091a2b3c4d5e6f708'},
   {id:'paneer', title:'Paneer (500g)', price:180, img:'https://images.unsplash.com/photo-1589308078051-52b6b6c5f6d7?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=ff1e2d3c4b5a6987f6e5d4c3b2a19080'},
   {id:'cream', title:'Fresh Cream (250g)', price:130, img:'https://images.unsplash.com/photo-1550583724-b2693f9ad1c8?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e'},
   {id:'chocolates', title:'Milk Chocolates (200g)', price:150, img:'https://images.unsplash.com/photo-1606813902873-58f0d0d4f6ff?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abbccddee11223344556677889900aabb'}
 ];
 
-/* Render product cards */
 const grid = document.getElementById('productGrid');
-
-function renderProducts(filter=''){
+function render(filter=''){
   grid.innerHTML='';
-  const items = PRODUCTS.filter(p=> p.title.toLowerCase().includes(filter.toLowerCase()) || p.id.includes(filter.toLowerCase()));
+  const items = PRODUCTS.filter(p => p.title.toLowerCase().includes(filter.toLowerCase()) || p.id.includes(filter.toLowerCase()));
   items.forEach(p=>{
-    const card = document.createElement('div'); card.className='card';
-    card.innerHTML = `
-      <div class="imgwrap"><img src="${p.img}" alt="${p.title}"></div>
-      <div>
-        <div class="title">${p.title}</div>
-        <div class="price">₹${p.price.toFixed(0)}</div>
-      </div>
+    const el = document.createElement('div'); el.className='card';
+    el.innerHTML = `
+      <img src="${p.img}" alt="${p.title}" onerror="this.src='https://via.placeholder.com/400x300?text=Image+not+found'">
+      <div class="title">${p.title}</div>
+      <div class="price">₹${p.price}</div>
       <div class="actions">
         <button class="btn add" data-id="${p.id}">Add to cart</button>
         <button class="btn view" onclick="window.location='cart.html'">View cart</button>
       </div>
     `;
-    grid.appendChild(card);
+    grid.appendChild(el);
   });
-  attachAddListeners();
+  attachAdd();
 }
-renderProducts();
+render();
 
-/* Search */
-document.getElementById('search').addEventListener('input', (e)=> renderProducts(e.target.value.trim()));
+document.getElementById('search').addEventListener('input', (e)=> render(e.target.value.trim()));
 
-/* Add to cart logic (Option 1: simple) */
-function attachAddListeners(){
-  document.querySelectorAll('.btn.add').forEach(btn=>{
-    btn.onclick = ()=>{
-      const id = btn.getAttribute('data-id');
-      addToCart(id);
-      btn.textContent = 'Added ✓';
-      setTimeout(()=>btn.textContent='Add to cart',900);
+/* Add to cart (localStorage) */
+function attachAdd(){
+  document.querySelectorAll('.btn.add').forEach(b=>{
+    b.onclick = ()=>{
+      const id = b.getAttribute('data-id');
+      const prod = PRODUCTS.find(x=>x.id===id);
+      if(!prod) return;
+      let cart = JSON.parse(localStorage.getItem('df_cart')||'[]');
+      const found = cart.find(i=>i.id===id);
+      if(found) found.qty = (found.qty||1) + 1;
+      else cart.push({id:prod.id,title:prod.title,price:prod.price,img:prod.img,qty:1});
+      localStorage.setItem('df_cart', JSON.stringify(cart));
+      b.textContent='Added ✓';
+      setTimeout(()=>b.textContent='Add to cart',900);
+      try{ updateBadge(); }catch{}
     };
   });
 }
-function addToCart(id){
-  const product = PRODUCTS.find(p=>p.id===id);
-  if(!product) return;
-  let cart = JSON.parse(localStorage.getItem('df_cart')||'[]');
-  // if same item exists, increase qty by 1
-  const existing = cart.find(i=>i.id===id);
-  if(existing){ existing.qty = (existing.qty||1) + 1; }
-  else{ cart.push({id:product.id, title:product.title, price:product.price, img:product.img, qty:1}); }
-  localStorage.setItem('df_cart', JSON.stringify(cart));
-  // update badge count in header (if present)
-  try{ window.parent && parent.updateBadge && parent.updateBadge(); }catch{}
-  // also update badge in this window
-  updateBadge();
-}
+
+/* badge update */
 function updateBadge(){
-  // tries to update any element with id 'badge'
-  const badge = document.getElementById('badge') || document.querySelector('#badge');
-  if(badge){
-    const cart = JSON.parse(localStorage.getItem('df_cart')||'[]');
-    const count = cart.reduce((s,i)=>s+(i.qty||1),0);
-    badge.textContent = count;
-  }
+  try{ const cart = JSON.parse(localStorage.getItem('df_cart')||'[]'); const count = cart.reduce((s,i)=>s+(i.qty||1),0); document.getElementById('badge').textContent = count; }catch(e){console.error(e);}
 }
 updateBadge();
+document.getElementById('year2').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
