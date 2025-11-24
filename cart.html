@@ -50,7 +50,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div style="display:flex;gap:12px;align-items:center">
     <a href="products.html" class="btn clear" style="text-decoration:none">Continue shopping</a>
-    <a href="payment.html" class="btn checkout" id="topCheckout">Checkout</a>
+    <a href="https://milkproducts.netlify.app/payment" class="btn checkout" id="topCheckout">Checkout</a>
   </div>
 </header>
   
@@ -95,7 +95,7 @@ function loadCart(){
 
   const total = cart.reduce((s,i)=>s + (i.price||0)*(i.qty||1), 0);
   html += `<div class="totals"><div style="font-weight:700;font-size:18px">Total: ₹${total.toFixed(0)}</div></div>`;
-  html += `<div style="display:flex;justify-content:flex-end;margin-top:18px;gap:12px"><button class="btn clear" id="clearBtn">Clear Cart</button><a href="payment.html" class="btn checkout" id="checkoutBtn">Proceed to Payment</a></div>`;
+  html += `<div style="display:flex;justify-content:flex-end;margin-top:18px;gap:12px"><button class="btn clear" id="clearBtn">Clear Cart</button><a href="https://milkproducts.netlify.app/payment" class="btn checkout" id="checkoutBtn">Proceed to Payment</a></div>`;
 
   container.innerHTML = html;
 
